@@ -3,39 +3,57 @@ const arr = [1, 2, 3, 4, 1, 0, 2, 2];
 const divide = (arr, n) => {
   // Write your code here
 
-	// if arr lenghth is zero then return empty array
+	// first condition check 
 
-	if(arr.length===0) return [] ; 
+	//  if array length is zero then return empty array
 
+	if(arr.length===0) return [];
+
+
+	// make a tracking sum variable for track sum
 
 	let trackingSum = 0;
 
-	let ans = [];
+	// another make a empty SubArray that can store subArra
 
-	let subArray = [];
+	let subArr = [];
 
-	for(let i = 0; i<arr.length; i++){
+	// another make a ans empty array that can store resultant array
 
-		if(trackingSum + arr[i] <= n){
+  let ans = [];
 
-			subArray.push(arr[i]);
+	// make a loop
+
+	for(let i = 0; i<arr.length;i++){
+
+		// give a cond
+
+		if(trackingSum + arr[i] <=n){
+
+
+			subArr.push(arr[i]);
 
 			trackingSum += arr[i];
 		}
 
+
 		else{
 
-			ans.push(subArray);
+			ans.push(subArr);
 
-			subArray = [ arr[i]];
+			subArr = arr[i];
 
 			trackingSum = arr[i];
 		}
 	}
 
- ans.push(subArray);
+	ans.push(subArr);
 
 	return ans;
+
+	
+
+
 
 	
 };
