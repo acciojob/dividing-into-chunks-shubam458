@@ -41,7 +41,7 @@ const divide = (arr, n) => {
 
 			ans.push(subArr);
 
-			subArr = arr[i];
+			subArr =[arr[i]];
 
 			trackingSum = arr[i];
 		}
